@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2022-09-28T17:31:23.161Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36" etag="2jlzGq_gNUsJY6atfwhW" version="20.2.8" type="github">
+<mxfile host="app.diagrams.net" modified="2022-09-28T17:55:02.942Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36" etag="UL7zk-kdJyX_tvrbW0zz" version="20.2.8" type="github">
   <diagram id="p76zfGVkwixcqqx8F_BY" name="Page-1">
-    <mxGraphModel dx="1141" dy="587" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="3169" dy="1631" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -10,15 +10,12 @@
         <mxCell id="d7ocT7l0u3XkU5i0dPVp-1" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
           <mxGeometry x="390" y="40" width="50" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="d7ocT7l0u3XkU5i0dPVp-5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="d7ocT7l0u3XkU5i0dPVp-2" target="d7ocT7l0u3XkU5i0dPVp-1">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
         <mxCell id="d7ocT7l0u3XkU5i0dPVp-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="d7ocT7l0u3XkU5i0dPVp-2" target="d7ocT7l0u3XkU5i0dPVp-8">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="415" y="220" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="d7ocT7l0u3XkU5i0dPVp-2" value="UpdateScheduledNotificationExecution&lt;br&gt;TimeOnAgendaEventUpdated" style="html=1;" vertex="1" parent="1">
+        <mxCell id="d7ocT7l0u3XkU5i0dPVp-2" value="RequeueScheduledNotification&lt;br&gt;OnAgendaEventUpdated" style="html=1;" vertex="1" parent="1">
           <mxGeometry x="305" y="120" width="220" height="50" as="geometry" />
         </mxCell>
         <mxCell id="d7ocT7l0u3XkU5i0dPVp-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="d7ocT7l0u3XkU5i0dPVp-8" target="d7ocT7l0u3XkU5i0dPVp-10">
@@ -58,7 +55,7 @@
         <mxCell id="d7ocT7l0u3XkU5i0dPVp-21" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="d7ocT7l0u3XkU5i0dPVp-17" target="d7ocT7l0u3XkU5i0dPVp-20">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="d7ocT7l0u3XkU5i0dPVp-17" value="ScheduledNotificationUpdater.execute(&lt;br&gt;id: ScheduleNotificationId,&lt;br&gt;changes: ScheduledNotification)" style="html=1;" vertex="1" parent="1">
+        <mxCell id="d7ocT7l0u3XkU5i0dPVp-17" value="ScheduledNotificationRequeuer.execute(&lt;br&gt;id: ScheduleNotificationId,&lt;br&gt;changes: ScheduledNotification)" style="html=1;" vertex="1" parent="1">
           <mxGeometry x="320" y="450" width="275" height="50" as="geometry" />
         </mxCell>
         <mxCell id="d7ocT7l0u3XkU5i0dPVp-23" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="d7ocT7l0u3XkU5i0dPVp-20" target="d7ocT7l0u3XkU5i0dPVp-22">
@@ -73,35 +70,32 @@
         <mxCell id="d7ocT7l0u3XkU5i0dPVp-22" value="const updatedTaskId = &lt;br&gt;await NotificationScheduler.enqueue(url: string, &lt;br&gt;scheduleNotification: ScheduleNotification)" style="html=1;" vertex="1" parent="1">
           <mxGeometry x="377.5" y="640" width="275" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="d7ocT7l0u3XkU5i0dPVp-28" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="d7ocT7l0u3XkU5i0dPVp-24" target="d7ocT7l0u3XkU5i0dPVp-27">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="d7ocT7l0u3XkU5i0dPVp-24" value="NotificationScheduler.dequeue&lt;br&gt;(id: ScheduleNotificationId)" style="html=1;" vertex="1" parent="1">
+        <mxCell id="d7ocT7l0u3XkU5i0dPVp-24" value="await NotificationScheduler.dequeue&lt;br&gt;(id: ScheduleNotificationId)" style="html=1;" vertex="1" parent="1">
           <mxGeometry x="377.5" y="880" width="275" height="50" as="geometry" />
         </mxCell>
         <mxCell id="d7ocT7l0u3XkU5i0dPVp-26" value="Se encola primero la nueva notificación para evitar dejar sin notificación del evento al usuario en caso de que el dequeue falle" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;size=11;" vertex="1" parent="1">
           <mxGeometry x="90" y="605" width="150" height="100" as="geometry" />
         </mxCell>
-        <mxCell id="d7ocT7l0u3XkU5i0dPVp-32" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="d7ocT7l0u3XkU5i0dPVp-27" target="d7ocT7l0u3XkU5i0dPVp-31">
+        <mxCell id="d7ocT7l0u3XkU5i0dPVp-77" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="d7ocT7l0u3XkU5i0dPVp-27" target="d7ocT7l0u3XkU5i0dPVp-76">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="d7ocT7l0u3XkU5i0dPVp-27" value="return updatedTaskId" style="html=1;" vertex="1" parent="1">
-          <mxGeometry x="377.5" y="970" width="275" height="50" as="geometry" />
+          <mxGeometry x="380" y="1100" width="275" height="50" as="geometry" />
         </mxCell>
         <mxCell id="d7ocT7l0u3XkU5i0dPVp-36" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="d7ocT7l0u3XkU5i0dPVp-29" target="d7ocT7l0u3XkU5i0dPVp-35">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="d7ocT7l0u3XkU5i0dPVp-29" value="ScheduledNotificationRepository.delete&lt;br&gt;(id: ScheduleNotificationId)" style="html=1;" vertex="1" parent="1">
-          <mxGeometry x="305" y="1310" width="300" height="50" as="geometry" />
+          <mxGeometry x="1185" y="595" width="300" height="50" as="geometry" />
         </mxCell>
         <mxCell id="d7ocT7l0u3XkU5i0dPVp-61" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="d7ocT7l0u3XkU5i0dPVp-31" target="d7ocT7l0u3XkU5i0dPVp-59">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="d7ocT7l0u3XkU5i0dPVp-31" value="await ScheduledNotificationRepository.save&lt;br&gt;(notification: ScheduleNotification)" style="html=1;" vertex="1" parent="1">
-          <mxGeometry x="305" y="1060" width="300" height="50" as="geometry" />
+          <mxGeometry x="1185" y="345" width="300" height="50" as="geometry" />
         </mxCell>
         <mxCell id="d7ocT7l0u3XkU5i0dPVp-34" value="Se guarda primero la nueva notificación para evitar dejar sin notificación del evento al usuario en caso de que el delete falle" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;size=11;" vertex="1" parent="1">
-          <mxGeometry x="85" y="1035" width="150" height="100" as="geometry" />
+          <mxGeometry x="965" y="320" width="150" height="100" as="geometry" />
         </mxCell>
         <mxCell id="d7ocT7l0u3XkU5i0dPVp-66" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="d7ocT7l0u3XkU5i0dPVp-35" target="d7ocT7l0u3XkU5i0dPVp-65">
           <mxGeometry relative="1" as="geometry" />
@@ -112,12 +106,12 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="d7ocT7l0u3XkU5i0dPVp-35" value="updateError == null" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="345" y="1410" width="160" height="80" as="geometry" />
+          <mxGeometry x="1225" y="695" width="160" height="80" as="geometry" />
         </mxCell>
         <mxCell id="d7ocT7l0u3XkU5i0dPVp-37" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.019;exitY=0.503;exitDx=0;exitDy=0;exitPerimeter=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" target="d7ocT7l0u3XkU5i0dPVp-39" source="d7ocT7l0u3XkU5i0dPVp-35">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="377.5" y="1450" as="sourcePoint" />
-            <mxPoint x="290" y="1450" as="targetPoint" />
+            <mxPoint x="1257.5" y="735" as="sourcePoint" />
+            <mxPoint x="1170" y="735" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="d7ocT7l0u3XkU5i0dPVp-38" value="Yes" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="d7ocT7l0u3XkU5i0dPVp-37">
@@ -127,14 +121,14 @@
         </mxCell>
         <mxCell id="d7ocT7l0u3XkU5i0dPVp-41" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="d7ocT7l0u3XkU5i0dPVp-39" target="d7ocT7l0u3XkU5i0dPVp-40">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="159.99999999999977" y="1485" as="sourcePoint" />
+            <mxPoint x="1039.9999999999998" y="770" as="sourcePoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="d7ocT7l0u3XkU5i0dPVp-39" value="Acknowledge Message" style="html=1;" vertex="1" parent="1">
-          <mxGeometry x="50" y="1425" width="220" height="50" as="geometry" />
+          <mxGeometry x="930" y="710" width="220" height="50" as="geometry" />
         </mxCell>
         <mxCell id="d7ocT7l0u3XkU5i0dPVp-40" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
-          <mxGeometry x="135" y="1520" width="50" height="50" as="geometry" />
+          <mxGeometry x="1015" y="805" width="50" height="50" as="geometry" />
         </mxCell>
         <mxCell id="d7ocT7l0u3XkU5i0dPVp-44" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="d7ocT7l0u3XkU5i0dPVp-43" target="d7ocT7l0u3XkU5i0dPVp-24">
           <mxGeometry relative="1" as="geometry" />
@@ -155,15 +149,12 @@
         <mxCell id="d7ocT7l0u3XkU5i0dPVp-43" value="updateError == null" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="435" y="730" width="160" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="d7ocT7l0u3XkU5i0dPVp-48" value="throw ScheduledNotification&lt;br&gt;CouldNotBeQueued" style="html=1;" vertex="1" parent="1">
+        <mxCell id="d7ocT7l0u3XkU5i0dPVp-48" value="throw ScheduledNotification&lt;br&gt;CouldNotBeEnqueued" style="html=1;" vertex="1" parent="1">
           <mxGeometry x="120" y="750" width="220" height="50" as="geometry" />
-        </mxCell>
-        <mxCell id="d7ocT7l0u3XkU5i0dPVp-53" value="No es importante para el flujo cuando se cumple la promesa de dequeue, por eso no tiene la keyword await" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;size=11;" vertex="1" parent="1">
-          <mxGeometry x="90" y="850" width="150" height="100" as="geometry" />
         </mxCell>
         <mxCell id="d7ocT7l0u3XkU5i0dPVp-55" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="d7ocT7l0u3XkU5i0dPVp-59" target="d7ocT7l0u3XkU5i0dPVp-29">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="475.0000000000002" y="1310" as="targetPoint" />
+            <mxPoint x="1355.0000000000002" y="595" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="d7ocT7l0u3XkU5i0dPVp-62" value="Yes" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="d7ocT7l0u3XkU5i0dPVp-55">
@@ -180,13 +171,13 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="d7ocT7l0u3XkU5i0dPVp-59" value="saveError == null" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="375" y="1160" width="160" height="80" as="geometry" />
+          <mxGeometry x="1255" y="445" width="160" height="80" as="geometry" />
         </mxCell>
         <mxCell id="d7ocT7l0u3XkU5i0dPVp-60" value="throw ScheduledNotification&lt;br&gt;CouldNotBeSaved" style="html=1;" vertex="1" parent="1">
-          <mxGeometry x="80" y="1180" width="220" height="50" as="geometry" />
+          <mxGeometry x="960" y="465" width="220" height="50" as="geometry" />
         </mxCell>
         <mxCell id="d7ocT7l0u3XkU5i0dPVp-63" value="No es importante para el flujo cuando se cumple la promesa de delete, por eso no tiene la keyword await" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;size=11;" vertex="1" parent="1">
-          <mxGeometry x="90" y="1285" width="150" height="100" as="geometry" />
+          <mxGeometry x="970" y="570" width="150" height="100" as="geometry" />
         </mxCell>
         <mxCell id="d7ocT7l0u3XkU5i0dPVp-69" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="d7ocT7l0u3XkU5i0dPVp-65" target="d7ocT7l0u3XkU5i0dPVp-68">
           <mxGeometry relative="1" as="geometry" />
@@ -205,19 +196,139 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="d7ocT7l0u3XkU5i0dPVp-65" value="currentEventRequeues &amp;lt; MAX_EVENT_REQUEUES" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="326" y="1540" width="197.5" height="110" as="geometry" />
+          <mxGeometry x="1206" y="825" width="197.5" height="110" as="geometry" />
         </mxCell>
         <mxCell id="d7ocT7l0u3XkU5i0dPVp-68" value="Requeue Message" style="html=1;" vertex="1" parent="1">
-          <mxGeometry x="155" y="1720" width="220" height="50" as="geometry" />
+          <mxGeometry x="1035" y="1005" width="220" height="50" as="geometry" />
         </mxCell>
         <mxCell id="d7ocT7l0u3XkU5i0dPVp-75" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="d7ocT7l0u3XkU5i0dPVp-71" target="d7ocT7l0u3XkU5i0dPVp-74">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="d7ocT7l0u3XkU5i0dPVp-71" value="Reject Message" style="html=1;" vertex="1" parent="1">
-          <mxGeometry x="460" y="1720" width="220" height="50" as="geometry" />
+          <mxGeometry x="1340" y="1005" width="220" height="50" as="geometry" />
         </mxCell>
         <mxCell id="d7ocT7l0u3XkU5i0dPVp-74" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
-          <mxGeometry x="545" y="1800" width="50" height="50" as="geometry" />
+          <mxGeometry x="1425" y="1085" width="50" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="d7ocT7l0u3XkU5i0dPVp-76" value="Publish ScheduleNotificationRequeued&lt;br&gt;&lt;br&gt;Payload:&lt;br&gt;&lt;br&gt;from: ScheduleNotification&lt;br&gt;to: ScheduleNotification" style="html=1;" vertex="1" parent="1">
+          <mxGeometry x="307.5" y="1200" width="275" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="d7ocT7l0u3XkU5i0dPVp-78" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" target="d7ocT7l0u3XkU5i0dPVp-82" source="d7ocT7l0u3XkU5i0dPVp-24">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="515" y="935" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d7ocT7l0u3XkU5i0dPVp-79" value="Yes" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="515" y="1079.8" as="geometry" />
+        </mxCell>
+        <mxCell id="d7ocT7l0u3XkU5i0dPVp-80" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.4;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="d7ocT7l0u3XkU5i0dPVp-82" target="d7ocT7l0u3XkU5i0dPVp-83">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="d7ocT7l0u3XkU5i0dPVp-81" value="No" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="d7ocT7l0u3XkU5i0dPVp-80">
+          <mxGeometry x="-0.0979" y="1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d7ocT7l0u3XkU5i0dPVp-85" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="d7ocT7l0u3XkU5i0dPVp-82" target="d7ocT7l0u3XkU5i0dPVp-27">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="d7ocT7l0u3XkU5i0dPVp-82" value="deleteError == null" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="435" y="975" width="160" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="d7ocT7l0u3XkU5i0dPVp-83" value="throw ScheduledNotification&lt;br&gt;CouldNotBeDequeued" style="html=1;" vertex="1" parent="1">
+          <mxGeometry x="120" y="995" width="220" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="d7ocT7l0u3XkU5i0dPVp-86" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" target="d7ocT7l0u3XkU5i0dPVp-89" source="d7ocT7l0u3XkU5i0dPVp-76">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="495" y="1240" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d7ocT7l0u3XkU5i0dPVp-87" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="d7ocT7l0u3XkU5i0dPVp-89" target="d7ocT7l0u3XkU5i0dPVp-99">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="d7ocT7l0u3XkU5i0dPVp-88" value="No" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="d7ocT7l0u3XkU5i0dPVp-87">
+          <mxGeometry x="-0.0829" y="2" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d7ocT7l0u3XkU5i0dPVp-89" value="requeueError == null" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="415" y="1360" width="160" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="d7ocT7l0u3XkU5i0dPVp-90" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.019;exitY=0.503;exitDx=0;exitDy=0;exitPerimeter=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="d7ocT7l0u3XkU5i0dPVp-89" target="d7ocT7l0u3XkU5i0dPVp-93">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="447.5" y="1400" as="sourcePoint" />
+            <mxPoint x="360" y="1400" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d7ocT7l0u3XkU5i0dPVp-91" value="Yes" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="d7ocT7l0u3XkU5i0dPVp-90">
+          <mxGeometry x="0.088" y="-1" relative="1" as="geometry">
+            <mxPoint x="5" y="1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d7ocT7l0u3XkU5i0dPVp-92" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="d7ocT7l0u3XkU5i0dPVp-93" target="d7ocT7l0u3XkU5i0dPVp-94">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="229.99999999999977" y="1435" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d7ocT7l0u3XkU5i0dPVp-93" value="Acknowledge Message" style="html=1;" vertex="1" parent="1">
+          <mxGeometry x="120" y="1375" width="220" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="d7ocT7l0u3XkU5i0dPVp-94" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="205" y="1470" width="50" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="d7ocT7l0u3XkU5i0dPVp-95" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="d7ocT7l0u3XkU5i0dPVp-99" target="d7ocT7l0u3XkU5i0dPVp-100">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="d7ocT7l0u3XkU5i0dPVp-96" value="Yes" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="d7ocT7l0u3XkU5i0dPVp-95">
+          <mxGeometry x="-0.095" y="1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d7ocT7l0u3XkU5i0dPVp-97" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="d7ocT7l0u3XkU5i0dPVp-99" target="d7ocT7l0u3XkU5i0dPVp-102">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="d7ocT7l0u3XkU5i0dPVp-98" value="No" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="d7ocT7l0u3XkU5i0dPVp-97">
+          <mxGeometry x="0.1412" y="-2" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d7ocT7l0u3XkU5i0dPVp-99" value="currentEventRequeues &amp;lt; MAX_EVENT_REQUEUES" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="396" y="1490" width="197.5" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="d7ocT7l0u3XkU5i0dPVp-100" value="Requeue Message" style="html=1;" vertex="1" parent="1">
+          <mxGeometry x="225" y="1670" width="220" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="d7ocT7l0u3XkU5i0dPVp-101" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="d7ocT7l0u3XkU5i0dPVp-102" target="d7ocT7l0u3XkU5i0dPVp-103">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="d7ocT7l0u3XkU5i0dPVp-102" value="Reject Message" style="html=1;" vertex="1" parent="1">
+          <mxGeometry x="530" y="1670" width="220" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="d7ocT7l0u3XkU5i0dPVp-103" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="615" y="1750" width="50" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="d7ocT7l0u3XkU5i0dPVp-110" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="d7ocT7l0u3XkU5i0dPVp-104" target="d7ocT7l0u3XkU5i0dPVp-107">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="d7ocT7l0u3XkU5i0dPVp-104" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="1211" y="40" width="50" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="d7ocT7l0u3XkU5i0dPVp-106" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="d7ocT7l0u3XkU5i0dPVp-107" target="d7ocT7l0u3XkU5i0dPVp-108">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1278.5" y="220" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d7ocT7l0u3XkU5i0dPVp-107" value="UpdateScheduledNotification&lt;br&gt;OnScheduledNotificationRequeued" style="html=1;" vertex="1" parent="1">
+          <mxGeometry x="1126" y="120" width="220" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="d7ocT7l0u3XkU5i0dPVp-109" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="d7ocT7l0u3XkU5i0dPVp-108" target="d7ocT7l0u3XkU5i0dPVp-31">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="d7ocT7l0u3XkU5i0dPVp-108" value="ScheduledNotificationUpdater.execute(&lt;br&gt;id: ScheduledNotificationId,&lt;br&gt;changes: ScheduledNotification)" style="html=1;" vertex="1" parent="1">
+          <mxGeometry x="1138" y="220" width="275" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="d7ocT7l0u3XkU5i0dPVp-111" value="Se separó en diferentes casos de uso el requeue y el update porque habría problemas si el evento se llegara a reencolar después de que se hizo el dequeue pero antes de que se actualizara la DB.&lt;br&gt;&lt;br&gt;Así nos aseguramos que el evento está reencolada antes de modificar la DB." style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;size=11;" vertex="1" parent="1">
+          <mxGeometry x="40" y="1175" width="200" height="160" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
